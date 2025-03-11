@@ -22,7 +22,7 @@ const TopScorers = () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `/api/competitions/${selectedLeague}/scorers`,
+          `https://api.football-data.org/v4/competitions/${selectedLeague}/scorers`,
           {
             headers: {
               "X-Auth-Token": API_TOKEN,

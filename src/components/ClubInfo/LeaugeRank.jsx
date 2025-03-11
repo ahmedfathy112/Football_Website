@@ -11,7 +11,7 @@ export const LeagueRank = () => {
     const fetchStandings = async () => {
       try {
         const response = await fetch(
-          `/api/competitions/${competitionId}/standings`,
+          `https://api.football-data.org/v4/competitions/${competitionId}/standings`,
           {
             headers: {
               "X-Auth-Token": API_TOKEN,

@@ -13,11 +13,14 @@ export const PrimerLeauge = () => {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const response = await fetch("/api/competitions/PL/matches", {
-          headers: {
-            "X-Auth-Token": API_TOKEN,
-          },
-        });
+        const response = await fetch(
+          "https://api.football-data.org/v4/competitions/PL/matches",
+          {
+            headers: {
+              "X-Auth-Token": API_TOKEN,
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch matches");
@@ -112,11 +115,14 @@ export const LaLiga = () => {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const response = await fetch("/api/competitions/PD/matches", {
-          headers: {
-            "X-Auth-Token": API_TOKEN,
-          },
-        });
+        const response = await fetch(
+          "https://api.football-data.org/v4/competitions/PD/matches",
+          {
+            headers: {
+              "X-Auth-Token": API_TOKEN,
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch matches");
@@ -206,11 +212,14 @@ const ChampionsLeauge = () => {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const response = await fetch("/api/competitions/CL/matches", {
-          headers: {
-            "X-Auth-Token": API_TOKEN,
-          },
-        });
+        const response = await fetch(
+          "https://api.football-data.org/v4/competitions/CL/matches",
+          {
+            headers: {
+              "X-Auth-Token": API_TOKEN,
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch matches");
