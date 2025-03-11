@@ -1,0 +1,28 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-decoration: none;
+}
+.sideBarLink {
+  transition: 0.5s ease;
+  text-decoration: none;
+}
+.sideBarLink:hover {
+  color: #c3cc5a;
+}
+
+.matchDay {
+  transition: 0.5s ease-in-out;
+  text-decoration: none;
+}
+.matchDay:hover {
+  background-color: #c3cc5a;
+}
+.navLogo {
+  text-decoration: none;
+}
+.TeamLink {
+  text-decoration: none;
+}
+.matchDev {
+  text-decoration: none;
+}

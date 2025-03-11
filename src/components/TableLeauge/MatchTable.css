@@ -1,0 +1,84 @@
+.match-container {
+  background-color: #303030;
+  padding: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.match-header {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.imageLaliga {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+}
+.imageclubs,
+.imageclubcome {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  display: block;
+  max-height: 500px;
+}
+.table {
+  min-width: 900px;
+  white-space: nowrap;
+}
+.match-results span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 50%;
+  color: white;
+  margin: 0 2px;
+  font-weight: bold;
+}
+.win {
+  background-color: green;
+}
+.draw {
+  background-color: orange;
+}
+.lose {
+  background-color: red;
+}
+.team-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+}
+@media (max-width: 768px) {
+  .match-header h5 {
+    font-size: 16px;
+  }
+  .imageclubs,
+  .imageclubcome {
+    width: 30px;
+    height: 30px;
+  }
+  .match-results span {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+  }
+}
+
+.table thead {
+  position: sticky;
+  top: 0;
+  background-color: #343a40;
+  z-index: 10;
+}
