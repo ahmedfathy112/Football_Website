@@ -8,6 +8,7 @@ import ClubDetails from "./components/ClubInfo/ClubDetails";
 import MatchDetails from "./components/Match/MatchDetails";
 
 function App() {
+  // console.log(process.env.API_TOKEN);
   return (
     <>
       <div className="min-h-dvh bg-[#303030]">

@@ -1,9 +1,8 @@
-import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import NavBar from "../Shared/NavBar";
+const API_TOKEN = "6a31cc8761ba4eaa84e25bc8c960a181";
 
-const apiToken = data.API_TOKEN;
 const MatchDetails = ({ matchId }) => {
   const [match, setMatch] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -17,7 +16,7 @@ const MatchDetails = ({ matchId }) => {
     const fetchMatchDetails = async () => {
       try {
         const response = await fetch(`/api/matches/${params.matchId}`, {
-          headers: { "X-Auth-Token": apiToken },
+          headers: { "X-Auth-Token": API_TOKEN },
         });
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();
@@ -44,7 +43,7 @@ const MatchDetails = ({ matchId }) => {
         const response = await fetch(
           `/api/matches/${params.matchId}/head2head?limit=50`,
           {
-            headers: { "X-Auth-Token": apiToken },
+            headers: { "X-Auth-Token": API_TOKEN },
           }
         );
         if (!response.ok) throw new Error("Failed to fetch head-to-head data");

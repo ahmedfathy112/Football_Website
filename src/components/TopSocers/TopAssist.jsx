@@ -1,9 +1,7 @@
-import { data } from "autoprefixer";
 import React, { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
 import NavBar from "../Shared/NavBar";
-
-const apiKey = data.API_TOKEN;
+const API_TOKEN = "6a31cc8761ba4eaa84e25bc8c960a181";
 
 const TopAssists = () => {
   const [topAssists, setTopAssists] = useState([]);
@@ -27,7 +25,7 @@ const TopAssists = () => {
           {
             method: "GET",
             headers: {
-              "X-Auth-Token": apiKey,
+              "X-Auth-Token": API_TOKEN,
             },
           }
         );

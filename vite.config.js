@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { data } from "autoprefixer";
 
 export default defineConfig({
   plugins: [react()],
@@ -11,7 +10,7 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
         headers: {
-          "X-Auth-Token": data.API_TOKEN,
+          "X-Auth-Token": "6a31cc8761ba4eaa84e25bc8c960a181",
         },
       },
     },

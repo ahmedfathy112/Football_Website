@@ -5,6 +5,8 @@ import { FaSearch } from "react-icons/fa";
 import "./MatchTable.css";
 import { Link, useParams } from "react-router-dom";
 import NavBar from "../Shared/NavBar";
+const API_TOKEN = "6a31cc8761ba4eaa84e25bc8c960a181";
+
 const LeaugeTable = () => {
   const [data, setData] = useState([]);
   const [selectedTeam, setSelectedTeam] = useState("");
