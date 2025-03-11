@@ -1,17 +1,17 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { data } from "autoprefixer";
 
 export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
       "/api": {
-        // المسار الذي تريد تحويله
-        target: "https://api.football-data.org/v4", // عنوان URL الأساسي للـ API
-        changeOrigin: true, // تغيير الأصل لتجنب مشاكل CORS
-        rewrite: (path) => path.replace(/^\/api/, ""), // إزالة /api من المسار
+        target: "https://api.football-data.org/v4",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
         headers: {
-          "X-Auth-Token": "6a31cc8761ba4eaa84e25bc8c960a181", // مفتاح API الخاص بك
+          "X-Auth-Token": data.API_TOKEN,
         },
       },
     },
