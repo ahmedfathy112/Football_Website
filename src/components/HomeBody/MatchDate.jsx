@@ -10,14 +10,11 @@ export const MatchesDate = () => {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const response = await fetch(
-          "https://api.football-data.org/v4/matches",
-          {
-            headers: {
-              "X-Auth-Token": API_TOKEN,
-            },
-          }
-        );
+        const response = await fetch("/api/matches", {
+          headers: {
+            "X-Auth-Token": API_TOKEN,
+          },
+        });
 
         if (!response.ok) {
           throw new Error("Failed to fetch matches");

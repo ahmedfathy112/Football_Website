@@ -152,7 +152,7 @@ const ClubDetails = () => {
     const fetchMatches = async () => {
       try {
         const response = await fetch(
-          `https://api.football-data.org/v4/teams/${params.teamId}/matches?status=SCHEDULED`,
+          `/api/teams/${params.teamId}/matches?status=SCHEDULED`,
           {
             headers: {
               "X-Auth-Token": API_TOKEN,

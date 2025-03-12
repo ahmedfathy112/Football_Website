@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImage from "../../assets/Banner.png";
+import HeroImage from "../../assets/imageHome.webp";
 
 export const HeroImageSec = () => {
   return (

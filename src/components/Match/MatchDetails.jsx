@@ -15,12 +15,9 @@ const MatchDetails = ({ matchId }) => {
   useEffect(() => {
     const fetchMatchDetails = async () => {
       try {
-        const response = await fetch(
-          `https://api.football-data.org/v4/matches/${params.matchId}`,
-          {
-            headers: { "X-Auth-Token": API_TOKEN },
-          }
-        );
+        const response = await fetch(`/api/matches/${params.matchId}`, {
+          headers: { "X-Auth-Token": API_TOKEN },
+        });
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();
         setMatch(data);

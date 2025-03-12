@@ -10,14 +10,11 @@ export const TeamSquad = () => {
   useEffect(() => {
     const fetchClubInfo = async () => {
       try {
-        const response = await fetch(
-          `https://api.football-data.org/v4/teams/${params.teamId}`,
-          {
-            headers: {
-              "X-Auth-Token": API_TOKEN,
-            },
-          }
-        );
+        const response = await fetch(`/api/teams/${params.teamId}`, {
+          headers: {
+            "X-Auth-Token": API_TOKEN,
+          },
+        });
         const data = await response.json();
         setClub(data);
         setLoading(false);

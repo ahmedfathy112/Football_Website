@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaFootballBall } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 const API_TOKEN = "6a31cc8761ba4eaa84e25bc8c960a181";
 
@@ -10,14 +11,11 @@ export const ClubInfo = () => {
   useEffect(() => {
     const fetchClubInfo = async () => {
       try {
-        const response = await fetch(
-          `https://api.football-data.org/v4/teams/${params.teamId}`,
-          {
-            headers: {
-              "X-Auth-Token": API_TOKEN,
-            },
-          }
-        );
+        const response = await fetch(`/api/teams/${params.teamId}`, {
+          headers: {
+            "X-Auth-Token": API_TOKEN,
+          },
+        });
         const data = await response.json();
         setClub(data);
         setLoading(false);

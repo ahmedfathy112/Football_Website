@@ -13,9 +13,7 @@ const LeaugeTable = () => {
   const params = useParams();
 
   useEffect(() => {
-    fetch(
-      `https://api.football-data.org/v4/competitions/${params.id}/standings`
-    )
+    fetch(`/api/competitions/${params.id}/standings`)
       .then((res) => res.json())
       .then((result) => {
         console.log(result);

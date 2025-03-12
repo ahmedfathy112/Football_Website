@@ -21,7 +21,7 @@ const TopAssists = () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `https://api.football-data.org/v4/competitions/${selectedLeague}/scorers`,
+          `/api/competitions/${selectedLeague}/scorers`,
           {
             method: "GET",
             headers: {
