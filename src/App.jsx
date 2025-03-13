@@ -6,6 +6,7 @@ import TopScorers from "./components/TopSocers/TopSocerPL";
 import TopAssists from "./components/TopSocers/TopAssist";
 import ClubDetails from "./components/ClubInfo/ClubDetails";
 import MatchDetails from "./components/Match/MatchDetails";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   // console.log(process.env.API_TOKEN);
