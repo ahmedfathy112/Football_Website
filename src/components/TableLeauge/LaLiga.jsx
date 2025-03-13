@@ -13,14 +13,25 @@ const LeaugeTable = () => {
   const params = useParams();
 
   useEffect(() => {
-    fetch(`/api/competitions/${params.id}/standings`)
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        setData(result?.standings?.[0]?.table || []);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+    const fetchStandings = async () => {
+      try {
+        const response = await fetch(
+          `/api/competitions/${params.id}/standings`,
+          {
+            headers: {
+              "X-Auth-Token": API_TOKEN,
+            },
+          }
+        );
+        const data = await response.json();
+        setData(data.standings[0]?.table || []);
+      } catch (error) {
+        console.error("Error fetching standings:", error);
+      }
+    };
+
+    fetchStandings();
+  }, [params.id]);
 
   const filteredData = selectedTeam
     ? data.filter((team) => team.team?.name === selectedTeam)
@@ -43,7 +54,7 @@ const LeaugeTable = () => {
             ))}
           </select>
 
-          <dvi className="input-group w-auto mt-2">
+          {/* <div className="input-group w-auto mt-2">
             <input
               type="text"
               className="form-control"
@@ -53,7 +64,7 @@ const LeaugeTable = () => {
             <span className="input-group-text">
               <FaSearch />
             </span>
-          </dvi>
+          </div> */}
         </div>
       </div>
 
